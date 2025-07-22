@@ -1,7 +1,7 @@
 (footprint "WSON-12-1EP_3x3mm_P0.5mm_EP1.5x2.5mm"
-	(version 20240108)
+	(version 20241229)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(layer "F.Cu")
 	(descr "WSON, 12 Pin (https://www.ti.com/lit/ds/symlink/tps63710.pdf#page=33), generated with kicad-footprint-generator ipc_noLead_generator.py")
 	(tags "WSON NoLead")
@@ -27,18 +27,6 @@
 			)
 		)
 	)
-	(property "Footprint" "WSON-12-1EP_3x3mm_P0.5mm_EP1.5x2.5mm"
-		(at 0 0 0)
-		(unlocked yes)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "c90805eb-ad2c-4707-b1a1-8956cce2eb02")
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
 	(property "Datasheet" ""
 		(at 0 0 0)
 		(unlocked yes)
@@ -48,6 +36,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -60,6 +49,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -92,7 +82,7 @@
 			(width 0.12)
 			(type solid)
 		)
-		(fill solid)
+		(fill yes)
 		(layer "F.SilkS")
 		(uuid "7a984797-f6ea-46e2-9a30-1900508b118d")
 	)
@@ -228,84 +218,84 @@
 	(pad "1" smd roundrect
 		(at -1.4375 -1.25)
 		(size 0.875 0.25)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "046018d7-8c2e-46a2-a1cf-55a20f091f72")
 	)
 	(pad "2" smd roundrect
 		(at -1.4375 -0.75)
 		(size 0.875 0.25)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "61478b5a-dfe4-471c-8381-364c491a1bd4")
 	)
 	(pad "3" smd roundrect
 		(at -1.4375 -0.25)
 		(size 0.875 0.25)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "e1a9cb8a-21be-471e-a7c2-e93b7315b946")
 	)
 	(pad "4" smd roundrect
 		(at -1.4375 0.25)
 		(size 0.875 0.25)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "b4dc082d-8744-4255-8dbf-67085eef2bf7")
 	)
 	(pad "5" smd roundrect
 		(at -1.4375 0.75)
 		(size 0.875 0.25)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "424d3517-092e-4a24-b86d-c825292adb23")
 	)
 	(pad "6" smd roundrect
 		(at -1.4375 1.25)
 		(size 0.875 0.25)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "b5c684f6-50bb-4050-9c73-f87bb6bfeca3")
 	)
 	(pad "7" smd roundrect
 		(at 1.4375 1.25)
 		(size 0.875 0.25)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "4a417454-65fd-4a24-a2cf-e3c030ac260c")
 	)
 	(pad "8" smd roundrect
 		(at 1.4375 0.75)
 		(size 0.875 0.25)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "5f4a11aa-447b-4902-8fcb-2e0858a2fa70")
 	)
 	(pad "9" smd roundrect
 		(at 1.4375 0.25)
 		(size 0.875 0.25)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "387a691d-f4f9-4135-9453-cfea63f5441a")
 	)
 	(pad "10" smd roundrect
 		(at 1.4375 -0.25)
 		(size 0.875 0.25)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "320303b6-8d8f-4503-a345-40e76154fcc5")
 	)
 	(pad "11" smd roundrect
 		(at 1.4375 -0.75)
 		(size 0.875 0.25)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "169f28c3-9971-4510-840f-8f0c0ec32ec2")
 	)
 	(pad "12" smd roundrect
 		(at 1.4375 -1.25)
 		(size 0.875 0.25)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "dee0adaf-099b-44ee-b98b-de400b787239")
 	)
@@ -317,7 +307,8 @@
 		(zone_connect 2)
 		(uuid "125dcb89-ca01-4249-81eb-1b9b915085b3")
 	)
-	(model "${KICAD8_3DMODEL_DIR}/Package_SON.3dshapes/WSON-12-1EP_3x3mm_P0.5mm_EP1.5x2.5mm.wrl"
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Package_SON.3dshapes/WSON-12-1EP_3x3mm_P0.5mm_EP1.5x2.5mm.wrl"
 		(offset
 			(xyz 0 0 0)
 		)
@@ -328,7 +319,7 @@
 			(xyz 0 0 0)
 		)
 	)
-	(model "${KICAD_EXTRA_3DMODEL_DIR}WSON-12-1EP_3x3mm_P0.5mm.stp"
+	(model "${KICAD_MY_LIB_DIR}/3D/WSON-12-1EP_3x3mm_P0.5mm.stp"
 		(offset
 			(xyz 0 0 0)
 		)

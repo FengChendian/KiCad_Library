@@ -1,7 +1,7 @@
 (footprint "SW_Slide_SPDT_XKB_SS-12D10L5"
-	(version 20240108)
+	(version 20241229)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
 		(at 0 3.5 0)
@@ -27,18 +27,6 @@
 			)
 		)
 	)
-	(property "Footprint" "SW_Slide_SPDT_XKB_SS-12D10L5"
-		(at 0 0 0)
-		(unlocked yes)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "883c8478-1aa8-43f8-86bf-0ce9a3139229")
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
 	(property "Datasheet" ""
 		(at 0 0 0)
 		(unlocked yes)
@@ -48,6 +36,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -60,6 +49,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -181,7 +171,8 @@
 		(thermal_bridge_angle 45)
 		(uuid "93af019c-5b49-4b04-96fe-22d4e692de98")
 	)
-	(model "D:/KiCad/3D/SW_Slide_SPDT_XKB_SS-12D10L5.stp"
+	(embedded_fonts no)
+	(model "${KICAD_MY_LIB_DIR}/3D/SW_Slide_SPDT_XKB_SS-12D10L5.stp"
 		(offset
 			(xyz 0 0 1)
 		)
