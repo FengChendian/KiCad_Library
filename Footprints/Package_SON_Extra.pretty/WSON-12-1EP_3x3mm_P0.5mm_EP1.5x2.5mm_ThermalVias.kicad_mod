@@ -370,7 +370,7 @@
 		(uuid "1856835d-0cbe-41cf-91ed-350847d8732e")
 	)
 	(embedded_fonts no)
-	(model "${KICAD_MY_LIB_DIR}/3D/WSON-12-1EP_3x3mm_P0.5mm.stp"
+	(model "${KICAD_MY_LIB_DIR}/3D/WSON-12-1EP_3x3mm_P0.5mm_EP1.5x2.5mm.stp"
 		(offset
 			(xyz 0 0 0)
 		)
