@@ -370,17 +370,6 @@
 		(uuid "1856835d-0cbe-41cf-91ed-350847d8732e")
 	)
 	(embedded_fonts no)
-	(model "${KICAD8_3DMODEL_DIR}/Package_SON.3dshapes/WSON-12-1EP_3x3mm_P0.5mm_EP1.5x2.5mm.wrl"
-		(offset
-			(xyz 0 0 0)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 0)
-		)
-	)
 	(model "${KICAD_MY_LIB_DIR}/3D/WSON-12-1EP_3x3mm_P0.5mm.stp"
 		(offset
 			(xyz 0 0 0)
