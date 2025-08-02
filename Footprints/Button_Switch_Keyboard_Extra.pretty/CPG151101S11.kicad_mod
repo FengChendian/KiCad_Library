@@ -1,4 +1,4 @@
-(footprint "凯华 热插拔 2-7"
+(footprint "CPG151101S11"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
@@ -15,7 +15,7 @@
 			)
 		)
 	)
-	(property "Value" "凯华 热插拔 2-7"
+	(property "Value" "CPG151101S11"
 		(at 0 8.5 0)
 		(layer "F.Fab")
 		(uuid "50365f8a-e31c-44e9-bc80-cadfbc7edfc8")
@@ -26,7 +26,7 @@
 			)
 		)
 	)
-	(property "Datasheet" ""
+	(property "Datasheet" "http://www.kailh.com/product/Ms/rcb/"
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
@@ -38,7 +38,7 @@
 			)
 		)
 	)
-	(property "Description" ""
+	(property "Description" "凯华 热插拔连接器"
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
@@ -49,6 +49,17 @@
 				(thickness 0.15)
 			)
 		)
+	)
+	(fp_rect
+		(start -9.525 -9.525)
+		(end 9.525 9.525)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "21cff32c-9c46-40a2-8767-79850c4bc871")
 	)
 	(fp_circle
 		(center -3.54 5.08)
@@ -276,9 +287,20 @@
 		(drill 1.7)
 		(layers "F&B.Cu" "*.Mask")
 		(solder_mask_margin 0)
-		(solder_paste_margin -2147.48364)
+		(solder_paste_margin -2147.483637)
 		(thermal_bridge_angle 90)
 		(uuid "c6bd7ee3-51c0-45f3-b92c-b4692a161440")
+	)
+	(pad "" thru_hole circle
+		(at -2.54 5.08)
+		(size 3.2 3.2)
+		(drill 3.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 90)
+		(uuid "9f6fa206-61ea-4cee-b0e9-3a953bcf414e")
 	)
 	(pad "" np_thru_hole circle
 		(at 0 0)
@@ -286,9 +308,20 @@
 		(drill 4)
 		(layers "F&B.Cu" "*.Mask")
 		(solder_mask_margin 0)
-		(solder_paste_margin -2147.48364)
+		(solder_paste_margin -2147.483637)
 		(thermal_bridge_angle 90)
 		(uuid "a47347cd-9600-42cd-8eb1-1d10d4896752")
+	)
+	(pad "" thru_hole circle
+		(at 3.81 2.54)
+		(size 3.2 3.2)
+		(drill 3.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 90)
+		(uuid "f6910656-dad4-47fa-8742-ceff7622f57c")
 	)
 	(pad "" np_thru_hole circle
 		(at 5.08 0)
@@ -296,31 +329,9 @@
 		(drill 1.7)
 		(layers "F&B.Cu" "*.Mask")
 		(solder_mask_margin 0)
-		(solder_paste_margin -2147.48364)
+		(solder_paste_margin -2147.483637)
 		(thermal_bridge_angle 90)
 		(uuid "268e9353-cc8b-4aad-9bd7-bbe2ca5efb3c")
-	)
-	(pad "0" thru_hole circle
-		(at -2.54 5.08)
-		(size 3.2 3.2)
-		(drill 3.1)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-		(solder_mask_margin 0)
-		(solder_paste_margin -2147.48364)
-		(thermal_bridge_angle 90)
-		(uuid "9f6fa206-61ea-4cee-b0e9-3a953bcf414e")
-	)
-	(pad "0" thru_hole circle
-		(at 3.81 2.54)
-		(size 3.2 3.2)
-		(drill 3.1)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-		(solder_mask_margin 0)
-		(solder_paste_margin -2147.48364)
-		(thermal_bridge_angle 90)
-		(uuid "f6910656-dad4-47fa-8742-ceff7622f57c")
 	)
 	(pad "1" smd roundrect
 		(at -6.08984 5.08 180)
@@ -10833,6 +10844,7 @@
 		)
 	)
 	(model "kicad-embed://4¡¢Òý½Å.stp"
+		(hide yes)
 		(offset
 			(xyz 0 0.00008 0)
 		)
@@ -10844,6 +10856,7 @@
 		)
 	)
 	(model "kicad-embed://1¡¢ÖáÐ¾.stp"
+		(hide yes)
 		(offset
 			(xyz 0 0.00012 0)
 		)
@@ -10855,6 +10868,7 @@
 		)
 	)
 	(model "kicad-embed://2¡¢ÉÏ¸Ç.stp"
+		(hide yes)
 		(opacity 0.7500)
 		(offset
 			(xyz 0.00004 0.00012 0)
@@ -10867,6 +10881,7 @@
 		)
 	)
 	(model "kicad-embed://3¡¢ÏÂ¸Ç.stp"
+		(hide yes)
 		(opacity 0.7500)
 		(offset
 			(xyz 0.00012 0.00012 0)
@@ -10881,41 +10896,6 @@
 	(model "kicad-embed://¿­»ªÈÈ²å°Î ÈýÎ¬-20180617-STEP.stp"
 		(offset
 			(xyz 0.00008 0.00008 -1.69)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz -0 -0 0)
-		)
-	)
-	(model "kicad-embed://1¡¢ÖáÐ¾.stp"
-		(offset
-			(xyz 0 0.00012 0)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz -0 -0 0)
-		)
-	)
-	(model "kicad-embed://2¡¢ÉÏ¸Ç.stp"
-		(opacity 0.7500)
-		(offset
-			(xyz 0.00004 0.00012 0)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz -0 -0 0)
-		)
-	)
-	(model "kicad-embed://3¡¢ÏÂ¸Ç.stp"
-		(opacity 0.7500)
-		(offset
-			(xyz 0.00012 0.00012 0)
 		)
 		(scale
 			(xyz 1 1 1)
