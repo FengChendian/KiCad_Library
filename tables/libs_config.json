@@ -1,0 +1,16 @@
+{
+    "libraries": {
+        "sym:MCU_NXP_MIMX": "NXP MIMX series",
+        "sym:MCU_Nordic_Extra": "Nordic Semiconductor extra",
+        "sym:Power_Extra": "Power extra",
+        "sym:Regulator_Linear_Extra": "Regulator Linear extra",
+        "sym:Regulator_Switching_Extra": "Regulator Switching extra",
+        "sym:RF_Module_Extra": "RF Module extra",
+        "sym:Interface_USB_Extra": "Interface USB extra",
+        "fp:Button_Switch_Keyboard_Extra": "Button Switch Keyboard extra",
+        "fp:Button_Switch_THT_Extra": "Button Switch THT extra",
+        "fp:Connector_FFC-FPC_Extra": "Connector FFC-FPC extra",
+        "fp:Connector_M2_Key_Extra": "Connector M.2 Key extra",
+        "fp:Package_SON_Extra": "SON package extra"
+    }
+}

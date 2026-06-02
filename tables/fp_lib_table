@@ -1,0 +1,9 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "Button_Switch_Keyboard_Extra") (type "KiCad") (uri "${KICAD_CUSTOM_LIB_DIR}/footprints/Button_Switch_Keyboard_Extra.pretty") (options "") (descr "Button Switch Keyboard extra"))
+	(lib (name "Button_Switch_THT_Extra") (type "KiCad") (uri "${KICAD_CUSTOM_LIB_DIR}/footprints/Button_Switch_THT_Extra.pretty") (options "") (descr "Button Switch THT extra"))
+	(lib (name "Connector_FFC-FPC_Extra") (type "KiCad") (uri "${KICAD_CUSTOM_LIB_DIR}/footprints/Connector_FFC-FPC_Extra.pretty") (options "") (descr "Connector FFC-FPC extra"))
+	(lib (name "Connector_M2_Key_Extra") (type "KiCad") (uri "${KICAD_CUSTOM_LIB_DIR}/footprints/Connector_M2_Key_Extra.pretty") (options "") (descr "Connector M.2 Key extra"))
+	(lib (name "Package_SON_Extra") (type "KiCad") (uri "${KICAD_CUSTOM_LIB_DIR}/footprints/Package_SON_Extra.pretty") (options "") (descr "SON package extra"))
+
+)

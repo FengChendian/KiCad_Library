@@ -16,7 +16,7 @@
 		)
 	)
 	(property "Value" "CPG151101S11"
-		(at 0 8.5 0)
+		(at 0 8 0)
 		(layer "F.Fab")
 		(uuid "50365f8a-e31c-44e9-bc80-cadfbc7edfc8")
 		(effects
@@ -49,6 +49,17 @@
 				(thickness 0.15)
 			)
 		)
+	)
+	(fp_rect
+		(start -9 -9)
+		(end 9 9)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "ae4664e2-f1b8-4cc7-96a3-a4e654d3d956")
 	)
 	(fp_rect
 		(start -9.525 -9.525)
