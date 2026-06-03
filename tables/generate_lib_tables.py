@@ -7,15 +7,15 @@ Generates sym_lib_table and fp_lib_table files from custom library directories.
 Compatible with Linux, macOS, and Windows.
 
 Usage:
-    python generate_lib_tables.py [--symbols-dir PATH] [--footprints-dir PATH] [--output-dir PATH]
+    python generate_lib_tables.py
 
 Environment Variables:
     KICAD_CUSTOM_LIB_DIR - Base directory for custom libraries (default: script's parent directory)
 """
 
 import os
-import sys
-import argparse
+
+
 import re
 import json
 from pathlib import Path
@@ -188,6 +188,7 @@ def save_lib_config(config_path: Path, descriptions: dict[str, str]) -> bool:
         if 'libraries' not in existing:
             existing['libraries'] = {}
         existing['libraries'].update(descriptions)
+        existing['libraries'] = dict(sorted(existing['libraries'].items()))
 
         with open(config_path, 'w', encoding='utf-8') as f:
             json.dump(existing, f, indent=4, ensure_ascii=False)
@@ -339,7 +340,8 @@ def generate_sym_lib_table(
     symbols_dir: Path,
     output_dir: Path,
     config: dict[str, str] | None = None,
-    mode: InputMode = InputMode.USE_JSON
+    mode: InputMode = InputMode.USE_JSON,
+    config_path: Path | None = None,
 ) -> Path:
     """Generate sym_lib_table file."""
     output_file = output_dir / 'sym_lib_table'
@@ -356,15 +358,20 @@ def generate_sym_lib_table(
 
     # Collect descriptions based on mode
     lib_descriptions: dict[str, str] = {}
+    if config:
+        lib_descriptions = config.copy()
 
-    if mode == InputMode.USE_JSON and config:
-        lib_descriptions = config
-    elif mode == InputMode.ASK_EACH:
+    if mode == InputMode.ASK_EACH:
+        updated = False
         for lib_name, lib_path, preview in libraries:
             key = get_lib_key(lib_name, 'sym')
-            desc = prompt_for_description(lib_name, 'Symbol', preview)
-            lib_descriptions[key] = desc
-    # SKIP mode: all descriptions remain empty
+            if key not in lib_descriptions or not lib_descriptions[key]:
+                desc = prompt_for_description(lib_name, 'Symbol', preview)
+                lib_descriptions[key] = desc
+                updated = True
+        if updated and config_path:
+            save_lib_config(config_path, lib_descriptions)
+    # USE_JSON: use config as-is; SKIP: all descriptions remain empty
 
     lines = [
         '(sym_lib_table',
@@ -397,7 +404,8 @@ def generate_fp_lib_table(
     footprints_dir: Path,
     output_dir: Path,
     config: dict[str, str] | None = None,
-    mode: InputMode = InputMode.USE_JSON
+    mode: InputMode = InputMode.USE_JSON,
+    config_path: Path | None = None,
 ) -> Path:
     """Generate fp_lib_table file."""
     output_file = output_dir / 'fp_lib_table'
@@ -414,15 +422,20 @@ def generate_fp_lib_table(
 
     # Collect descriptions based on mode
     lib_descriptions: dict[str, str] = {}
+    if config:
+        lib_descriptions = config.copy()
 
-    if mode == InputMode.USE_JSON and config:
-        lib_descriptions = config
-    elif mode == InputMode.ASK_EACH:
+    if mode == InputMode.ASK_EACH:
+        updated = False
         for lib_name, lib_path, preview in libraries:
             key = get_lib_key(lib_name, 'fp')
-            desc = prompt_for_description(lib_name, 'Footprint', preview)
-            lib_descriptions[key] = desc
-    # SKIP mode: all descriptions remain empty
+            if key not in lib_descriptions or not lib_descriptions[key]:
+                desc = prompt_for_description(lib_name, 'Footprint', preview)
+                lib_descriptions[key] = desc
+                updated = True
+        if updated and config_path:
+            save_lib_config(config_path, lib_descriptions)
+    # USE_JSON: use config as-is; SKIP: all descriptions remain empty
 
     lines = [
         '(fp_lib_table',
@@ -456,42 +469,14 @@ def generate_fp_lib_table(
 # ============================================================================
 
 def main():
-    parser = argparse.ArgumentParser(
-        description='Generate KiCad sym_lib_table and fp_lib_table files'
-    )
-    parser.add_argument(
-        '--symbols-dir',
-        type=Path,
-        help='Path to symbols directory'
-    )
-    parser.add_argument(
-        '--footprints-dir',
-        type=Path,
-        help='Path to footprints directory'
-    )
-    parser.add_argument(
-        '--output-dir',
-        type=Path,
-        help='Path to output directory (default: script directory)'
-    )
-    parser.add_argument(
-        '--mode',
-        type=str,
-        choices=['ask', 'json', 'skip'],
-        default=None,
-        help='Description input mode: ask=interactive, json=config file, skip=no descriptions'
-    )
-
-    args = parser.parse_args()
-
     # Determine base directory
     base_dir = get_default_lib_dir()
     print(f"Base directory: {base_dir}")
 
-    # Set default paths
-    symbols_dir = args.symbols_dir or (base_dir / 'Symbols')
-    footprints_dir = args.footprints_dir or (base_dir / 'Footprints')
-    output_dir = args.output_dir or get_script_dir()
+    # Set paths
+    symbols_dir = base_dir / 'Symbols'
+    footprints_dir = base_dir / 'Footprints'
+    output_dir = get_script_dir()
 
     # Ensure output directory exists
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -515,9 +500,7 @@ def main():
         return
 
     # Determine mode
-    mode = InputMode.USE_JSON  # default
-    if args.mode:
-        mode = InputMode(args.mode)
+    mode = InputMode.USE_JSON
 
     # Load or prepare config
     config_path = get_config_path()
@@ -581,8 +564,24 @@ def main():
     print("开始生成表格文件...")
     print("=" * 60 + "\n")
 
-    generate_sym_lib_table(symbols_dir, output_dir, lib_descriptions, mode)
-    generate_fp_lib_table(footprints_dir, output_dir, lib_descriptions, mode)
+    generate_sym_lib_table(symbols_dir, output_dir, lib_descriptions, mode, config_path)
+    generate_fp_lib_table(footprints_dir, output_dir, lib_descriptions, mode, config_path)
+
+    # 最后检查并修复 JSON 配置文件的排序
+    if config_path.exists():
+        try:
+            with open(config_path, 'r', encoding='utf-8') as f:
+                current_config = json.load(f)
+            libs = current_config.get('libraries', {})
+            if libs:
+                sorted_libs = dict(sorted(libs.items()))
+                if list(libs.keys()) != list(sorted_libs.keys()):
+                    current_config['libraries'] = sorted_libs
+                    with open(config_path, 'w', encoding='utf-8') as f:
+                        json.dump(current_config, f, indent=4, ensure_ascii=False)
+                    print(f"\n已修复配置文件排序: {config_path}")
+        except Exception as e:
+            print(f"\nWarning: 配置文件排序检查失败: {e}")
 
     print()
     print("Done!")

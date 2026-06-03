@@ -1,5 +1,6 @@
 (sym_lib_table
 	(version 7)
+	(lib (name "Comparator_Extra") (type "KiCad") (uri "${KICAD_CUSTOM_LIB_DIR}/symbols/Comparator_Extra.kicad_sym") (options "") (descr "Comparator extra"))
 	(lib (name "Interface_USB_Extra") (type "KiCad") (uri "${KICAD_CUSTOM_LIB_DIR}/symbols/Interface_USB_Extra.kicad_sym") (options "") (descr "Interface USB extra"))
 	(lib (name "MCU_Nordic_Extra") (type "KiCad") (uri "${KICAD_CUSTOM_LIB_DIR}/symbols/MCU_Nordic_Extra.kicad_sym") (options "") (descr "Nordic Semiconductor extra"))
 	(lib (name "MCU_NXP_MIMX") (type "KiCad") (uri "${KICAD_CUSTOM_LIB_DIR}/symbols/MCU_NXP_MIMX.kicad_sym") (options "") (descr "NXP MIMX series"))
