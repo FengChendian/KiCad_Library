@@ -28,7 +28,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -39,7 +39,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv3601.pdf?ts=1780384866926&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTLV3601%253Futm_source%253Dgoogle%2526utm_medium%253Dcpc%2526utm_campaign%253Dasc-null-null-GPN_EN-cpc-pf-google-tw_en_cons%2526utm_content%253DTLV3601%2526ds_k%253DTLV3601%2526DCM%253Dyes%2526gclsrc%253Daw.ds%2526gad_source%253D1%2526gad_campaignid%253D8756412657%2526gbraid%253D0AAAAAC068F0UpMk9loXV4MNb8cCES-NiD%2526gclid%253DEAIaIQobChMIwsuPmNXnlAMVcwd7Bx0aWg8aEAAYASAAEgJ2ofD_BwE"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -50,7 +50,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "2.5-ns high-speed rail-to-rail comparator with push-pull outputs"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
