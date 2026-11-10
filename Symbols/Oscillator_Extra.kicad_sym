@@ -2,7 +2,7 @@
 	(version 20251024)
 	(generator "kicad_symbol_editor")
 	(generator_version "10.0")
-	(symbol "YSO690PR_"
+	(symbol "YSO690PR"
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -61,7 +61,7 @@
 				)
 			)
 		)
-		(symbol "YSO690PR__1_1"
+		(symbol "YSO690PR_1_1"
 			(rectangle
 				(start -8.89 5.08)
 				(end 8.89 -5.08)
