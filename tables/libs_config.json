@@ -11,6 +11,7 @@
         "sym:Interface_USB_Extra": "Interface USB extra",
         "sym:MCU_NXP_MIMX": "NXP MIMX series",
         "sym:MCU_Nordic_Extra": "Nordic Semiconductor extra",
+        "sym:Oscillator_Extra": "Oscillator Extra",
         "sym:Power_Extra": "Power extra",
         "sym:RF_Module_Extra": "RF Module extra",
         "sym:Regulator_Linear_Extra": "Regulator Linear extra",
